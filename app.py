@@ -1,6 +1,6 @@
-from flask import flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request
 
-app = flask(__name__)
+app = Flask(__name__)
 
 students = []
 
@@ -11,14 +11,14 @@ def index():
         grade = float(request.form["grade"])
         status = "Passed" if grade >= 75 else "Failed"
 
-        status.append({
+        students.append({
             "name": name,
             "grade": grade,
-            "status": status,        
-})
+            "status": status
+        })
         return redirect("/")
     
     return render_template("index.html", students=students)
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
