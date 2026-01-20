@@ -20,5 +20,13 @@ def index():
     
     return render_template("index.html", students=students)
 
+# Add a simple test route
+@app.route("/test")
+def test():
+    return render_template("index.html", students=[
+        {"name": "Test Student", "grade": 80, "status": "Passed"},
+        {"name": "Another Student", "grade": 60, "status": "Failed"}
+    ])
+
 if __name__ == "__main__":
     app.run(debug=True)
