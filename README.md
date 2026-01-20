@@ -1,1 +1,1 @@
-Run python.app on terminal on vscode
+Run python app.py on terminal on vscode
