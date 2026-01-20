@@ -21,12 +21,17 @@
 
     <h3>Student List</h3>
     <ul>
-       <li style="color: {{ 'green' if student.status == 'Passed' else 'red' }};">
-    {{ student.name }} - {{ student.grade }} ({{ student.status }})
-</li>
-
+        {% for student in students %}
+            {% if student.grade >= 75 %}
+                <li style="color: green;">
+                    {{ student.name }} - {{ student.grade }} (Passed)
+                </li>
+            {% else %}
+                <li style="color: red;">
+                    {{ student.name }} - {{ student.grade }} (Failed)
+                </li>
+            {% endif %}
         {% endfor %}
     </ul>
 </body>
 </html>
-
