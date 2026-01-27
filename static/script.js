@@ -158,4 +158,9 @@ function resetForm() {
 
     // Focus on name field
     document.getElementById('name').focus();
+
+
+
+
 }
+
